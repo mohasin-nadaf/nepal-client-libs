@@ -230,7 +230,7 @@ export class AlAssetsQueryClientInstance {
    * "remediation_ids": ["ids_upgrade_hardware"], "deployment_ids":["0A2DC25F-5B5A-4A93-9413-1A8D6F87489E"], filters:[]}'
    */
   async disposeRemediations(accountId: string, remediationData: { deployment_ids?: string[], filters: string[], vulnerability_ids?: string[], remediation_ids?: string[], reason: string,
-                                                                  comment: string, expires?: number}) {
+                                                                  comment?: string, expires?: number}) {
     let baseRemediationData = { operation: 'dispose_remediations' };
     Object.assign(baseRemediationData, remediationData);
     return this.client.put<any>({
